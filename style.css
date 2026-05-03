@@ -39,7 +39,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 body {
@@ -213,14 +213,12 @@ body {
     padding: 1.25rem 3rem;
     text-decoration: none;
     border-radius: var(--border-radius);
-    transition: all 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .cta-button:hover {
     background-color: var(--color-accent-hover);
-    transform: translateY(-2px);
 }
 
 .cta-fine-print {
@@ -282,8 +280,6 @@ body {
     padding: 1rem;
     font-size: 1rem;
     font-family: var(--font-main);
-  
-    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .form-group input:focus,
@@ -306,9 +302,8 @@ body {
     font-weight: var(--font-weight-bold);
     padding: 1.25rem;
     border: 2px solid #fff;
- 
+
     cursor: pointer;
-    transition: all 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-top: var(--spacing-sm);
@@ -316,13 +311,11 @@ body {
 
 .submit-button:hover {
     background-color: var(--color-accent-hover);
-    transform: translateY(-2px);
 }
 
 .submit-button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    transform: none;
 }
 
 .form-feedback {

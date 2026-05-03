@@ -85,9 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
-// SMOOTH SCROLL FOR ANCHOR LINKS
+// SMOOTH SCROLL FOR ANCHOR LINKS (REMOVED)
 // ============================================
 
+// Smooth scroll removed - using instant scroll instead
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -100,7 +101,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth',
+                behavior: 'auto',
                 block: 'start'
             });
         }
@@ -141,31 +142,10 @@ document.querySelectorAll('.cta-button').forEach(button => {
 });
 
 // ============================================
-// SCROLL ANIMATIONS (OPTIONAL)
+// SCROLL ANIMATIONS (REMOVED)
 // ============================================
 
-// Add fade-in animation as elements come into view
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe list items for animation
-document.querySelectorAll('.fucked-list li').forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(20px)';
-    item.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
-    observer.observe(item);
-});
+// Animations removed per user request
 
 // ============================================
 // URL PARAMETER TRACKING (OPTIONAL)

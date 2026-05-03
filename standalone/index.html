@@ -3,319 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unfuckyourweb — We Unfuck Your Website.</title>
-    <meta name="description" content="We find exactly what's killing your conversions, confusing your visitors, and embarrassing your brand — then we fix it.">
+    <title>Is Your Website Fucked? | Unfuck Your Web</title>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Is your website a disaster? Slow loading, broken on mobile, losing you customers? We fix fucked websites. Fast.">
 
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Is Your Website Fucked?">
+    <meta property="og:description" content="We fix fucked websites. Fast.">
+    <meta property="og:type" content="website">
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
-                        heading: ['Inter', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="is-your-website-fucked.css">
 </head>
-<body class="min-h-screen bg-black text-white font-sans">
-
-    <!-- Navigation -->
-    <header id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-12">
-            <span class="font-mono text-sm tracking-widest uppercase text-white">
-                Unfuckyourweb
-            </span>
-            <button
-                type="button"
-                onclick="scrollToContact()"
-                class="font-mono text-xs tracking-widest uppercase text-white border border-white/40 px-4 py-2 hover:bg-white hover:text-black transition-all duration-200">
-                Get Unfucked →
-            </button>
-        </div>
-    </header>
+<body>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-end px-6 pt-32 pb-16 md:px-12 md:pb-20 border-b border-white/10">
-        <div id="hero-content" class="opacity-0 translate-y-8 transition-all duration-700 ease-out">
-            <p class="font-mono text-xs tracking-[0.3em] uppercase text-white/40 mb-8">
-                Digital Agency · Est. 2024
-            </p>
-            <h1 class="font-heading text-[clamp(3.5rem,11vw,10rem)] leading-[0.9] tracking-tight text-white max-w-5xl">
-                Your website<br>
-                is <em>fucking</em><br>
-                broken.
-            </h1>
-            <div class="mt-12 flex flex-col sm:flex-row items-start sm:items-end gap-8 sm:gap-16">
-                <p class="max-w-sm text-base leading-7 text-white/50 font-light">
-                    We find exactly what's killing your conversions, confusing your visitors, and embarrassing your brand — then we fix it.
-                </p>
-                <button
-                    type="button"
-                    onclick="scrollToReasons()"
-                    class="font-mono text-xs tracking-widest uppercase text-white/40 hover:text-white transition-colors duration-200 flex items-center gap-2 shrink-0">
-                    Scroll to see why
-                    <i class="ph ph-arrow-right"></i>
-                </button>
-            </div>
+    <section class="hero">
+        <div class="container">
+            <h1>Is your website fucked?</h1>
+      
         </div>
     </section>
 
-    <!-- Reasons Section -->
-    <section id="reasons" class="border-b border-white/10">
-        <div class="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-20">
-            <p class="font-mono text-xs tracking-[0.3em] uppercase text-white/30 mb-12">
-                8 reasons it's fucked
-            </p>
-        </div>
-
-        <!-- Reason 01 -->
-        <div class="reason-row group border-t border-white/10 px-6 md:px-12 py-8 md:py-10 transition-all duration-500 ease-out hover:bg-white/[0.03] opacity-0 translate-y-4">
-            <div class="mx-auto max-w-7xl flex items-start gap-6 md:gap-12">
-                <span class="font-mono text-xs text-white/20 mt-1 shrink-0 w-7">01</span>
-                <div class="flex-1 md:flex md:items-baseline md:gap-12">
-                    <h3 class="font-heading text-[clamp(1.6rem,3.5vw,2.8rem)] leading-tight text-white md:w-1/2 shrink-0">
-                        Nobody knows what you do.
-                    </h3>
-                    <p class="mt-3 md:mt-0 text-sm md:text-base leading-7 text-white/40 font-light md:flex-1">
-                        Your homepage tries to say everything. It says nothing. Visitors bounce in four seconds because they couldn't find the one sentence that should have been at the top.
-                    </p>
-                </div>
-                <span class="hidden md:block shrink-0 text-white/10 group-hover:text-white/40 transition-colors duration-200 mt-1">
-                    <i class="ph ph-arrow-right"></i>
-                </span>
+    <!-- The List Section -->
+    <section class="list-section">
+        <div class="container">
+            <div class="intro-text">
+                <p>There could mean many things:</p>
             </div>
-        </div>
 
-        <!-- Reason 02 -->
-        <div class="reason-row group border-t border-white/10 px-6 md:px-12 py-8 md:py-10 transition-all duration-500 ease-out hover:bg-white/[0.03] opacity-0 translate-y-4">
-            <div class="mx-auto max-w-7xl flex items-start gap-6 md:gap-12">
-                <span class="font-mono text-xs text-white/20 mt-1 shrink-0 w-7">02</span>
-                <div class="flex-1 md:flex md:items-baseline md:gap-12">
-                    <h3 class="font-heading text-[clamp(1.6rem,3.5vw,2.8rem)] leading-tight text-white md:w-1/2 shrink-0">
-                        It loads like it's 2009.
-                    </h3>
-                    <p class="mt-3 md:mt-0 text-sm md:text-base leading-7 text-white/40 font-light md:flex-1">
-                        Bloated plugins, uncompressed images, render-blocking scripts. Every extra second costs you 7% of conversions. Do the math.
-                    </p>
-                </div>
-                <span class="hidden md:block shrink-0 text-white/10 group-hover:text-white/40 transition-colors duration-200 mt-1">
-                    <i class="ph ph-arrow-right"></i>
-                </span>
-            </div>
+            <ul class="fucked-list">
+                <li>It takes longer to load than it takes your customer to lose interest (that's about 3 seconds, by the way)</li>
+                <li>It looks like it was designed in 2003 and last updated in 2009</li>
+                <li>The mobile version is just a tiny, unreadable version of the desktop site</li>
+                <li>Your contact form hasn't worked in 6 months but you didn't notice because nobody was filling it out anyway</li>
+                <li>You're paying $80/month for hosting that should cost $5</li>
+                <li>Your SSL certificate expired and now browsers tell people your site is "Not Secure"</li>
+                <li>It's impossible to update without calling your nephew who "knows computers"</li>
+                <li>The images are so massive they eat through mobile data plans like it's 2005</li>
+                <li>Nobody can find you on Google because your "SEO expert" just stuffed keywords into hidden text</li>
+                <li>Your homepage has a Flash animation (yes, Flash died in 2020)</li>
+                <li>The navigation makes sense to you but confuses literally everyone else</li>
+                <li>It auto-plays music or video like some kind of MySpace throwback</li>
+                <li>Your "coming soon" page has been coming soon for 18 months</li>
+                <li>The site uses Comic Sans unironically</li>
+                <li>You have a visitor counter at the bottom (and it still says 00042)</li>
+                <li>There's a "Best Viewed in Internet Explorer 6" notice somewhere</li>
+                <li>Your competitors' sites make yours look like a school project</li>
+                <li>The WordPress install is so old it's basically a security risk with a logo</li>
+                <li>You have 47 plugins doing things you don't understand</li>
+                <li>The footer says "Copyright 2017"</li>
+                <li>Your "blog" has 3 posts, all from 2016</li>
+                <li>The color scheme looks like a clown threw up</li>
+                <li>There's a stock photo of a woman wearing a headset laughing at a salad</li>
+                <li>Pop-ups appear before anyone can read a single word</li>
+                <li>The social media icons link to accounts you haven't posted to in years</li>
+                <li>Your site doesn't work on an iPhone (that's half your traffic, genius)</li>
+                <li>The analytics haven't been checked since Obama was president</li>
+                <li>The site is so slow Google gave up and delisted you</li>
+                <li>Buttons don't look like buttons and links don't look like links</li>
+                <li>You have one of those terrible "This site uses cookies" popups covering half the screen</li>
+                <li>Your site got hacked and now it's selling knockoff Viagra</li>
+                <li>You paid someone on Fiverr $25 and this is what you got</li>
+            </ul>
         </div>
+    </section>
 
-        <!-- Reason 03 -->
-        <div class="reason-row group border-t border-white/10 px-6 md:px-12 py-8 md:py-10 transition-all duration-500 ease-out hover:bg-white/[0.03] opacity-0 translate-y-4">
-            <div class="mx-auto max-w-7xl flex items-start gap-6 md:gap-12">
-                <span class="font-mono text-xs text-white/20 mt-1 shrink-0 w-7">03</span>
-                <div class="flex-1 md:flex md:items-baseline md:gap-12">
-                    <h3 class="font-heading text-[clamp(1.6rem,3.5vw,2.8rem)] leading-tight text-white md:w-1/2 shrink-0">
-                        Your CTAs are invisible.
-                    </h3>
-                    <p class="mt-3 md:mt-0 text-sm md:text-base leading-7 text-white/40 font-light md:flex-1">
-                        You buried the most important button under three carousels and a stock photo of a handshake. No wonder nobody clicks it.
-                    </p>
-                </div>
-                <span class="hidden md:block shrink-0 text-white/10 group-hover:text-white/40 transition-colors duration-200 mt-1">
-                    <i class="ph ph-arrow-right"></i>
-                </span>
-            </div>
-        </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>So what are you going to do now? Hire your nephew?</h2>
+             
+                <p class="cta-warning">We recommed you let us help before risking another "family discount".</p>
 
-        <!-- Reason 04 -->
-        <div class="reason-row group border-t border-white/10 px-6 md:px-12 py-8 md:py-10 transition-all duration-500 ease-out hover:bg-white/[0.03] opacity-0 translate-y-4">
-            <div class="mx-auto max-w-7xl flex items-start gap-6 md:gap-12">
-                <span class="font-mono text-xs text-white/20 mt-1 shrink-0 w-7">04</span>
-                <div class="flex-1 md:flex md:items-baseline md:gap-12">
-                    <h3 class="font-heading text-[clamp(1.6rem,3.5vw,2.8rem)] leading-tight text-white md:w-1/2 shrink-0">
-                        The mobile version is an afterthought.
-                    </h3>
-                    <p class="mt-3 md:mt-0 text-sm md:text-base leading-7 text-white/40 font-light md:flex-1">
-                        Half your traffic is on a phone. Your site treats them like second-class citizens with tiny tap targets and horizontal scroll nightmares.
-                    </p>
-                </div>
-                <span class="hidden md:block shrink-0 text-white/10 group-hover:text-white/40 transition-colors duration-200 mt-1">
-                    <i class="ph ph-arrow-right"></i>
-                </span>
-            </div>
-        </div>
-
-        <!-- Reason 05 -->
-        <div class="reason-row group border-t border-white/10 px-6 md:px-12 py-8 md:py-10 transition-all duration-500 ease-out hover:bg-white/[0.03] opacity-0 translate-y-4">
-            <div class="mx-auto max-w-7xl flex items-start gap-6 md:gap-12">
-                <span class="font-mono text-xs text-white/20 mt-1 shrink-0 w-7">05</span>
-                <div class="flex-1 md:flex md:items-baseline md:gap-12">
-                    <h3 class="font-heading text-[clamp(1.6rem,3.5vw,2.8rem)] leading-tight text-white md:w-1/2 shrink-0">
-                        Your copy sounds like a press release.
-                    </h3>
-                    <p class="mt-3 md:mt-0 text-sm md:text-base leading-7 text-white/40 font-light md:flex-1">
-                        'Empowering synergistic solutions for tomorrow's challenges.' We have no idea what you sell. Neither do your customers.
-                    </p>
-                </div>
-                <span class="hidden md:block shrink-0 text-white/10 group-hover:text-white/40 transition-colors duration-200 mt-1">
-                    <i class="ph ph-arrow-right"></i>
-                </span>
-            </div>
-        </div>
-
-        <!-- Reason 06 -->
-        <div class="reason-row group border-t border-white/10 px-6 md:px-12 py-8 md:py-10 transition-all duration-500 ease-out hover:bg-white/[0.03] opacity-0 translate-y-4">
-            <div class="mx-auto max-w-7xl flex items-start gap-6 md:gap-12">
-                <span class="font-mono text-xs text-white/20 mt-1 shrink-0 w-7">06</span>
-                <div class="flex-1 md:flex md:items-baseline md:gap-12">
-                    <h3 class="font-heading text-[clamp(1.6rem,3.5vw,2.8rem)] leading-tight text-white md:w-1/2 shrink-0">
-                        The forms are broken or terrifying.
-                    </h3>
-                    <p class="mt-3 md:mt-0 text-sm md:text-base leading-7 text-white/40 font-light md:flex-1">
-                        Twenty required fields, no inline validation, and a CAPTCHA from 2012. You're actively punishing people who want to give you money.
-                    </p>
-                </div>
-                <span class="hidden md:block shrink-0 text-white/10 group-hover:text-white/40 transition-colors duration-200 mt-1">
-                    <i class="ph ph-arrow-right"></i>
-                </span>
-            </div>
-        </div>
-
-        <!-- Reason 07 -->
-        <div class="reason-row group border-t border-white/10 px-6 md:px-12 py-8 md:py-10 transition-all duration-500 ease-out hover:bg-white/[0.03] opacity-0 translate-y-4">
-            <div class="mx-auto max-w-7xl flex items-start gap-6 md:gap-12">
-                <span class="font-mono text-xs text-white/20 mt-1 shrink-0 w-7">07</span>
-                <div class="flex-1 md:flex md:items-baseline md:gap-12">
-                    <h3 class="font-heading text-[clamp(1.6rem,3.5vw,2.8rem)] leading-tight text-white md:w-1/2 shrink-0">
-                        You have zero visual hierarchy.
-                    </h3>
-                    <p class="mt-3 md:mt-0 text-sm md:text-base leading-7 text-white/40 font-light md:flex-1">
-                        Everything is the same size, the same weight, the same urgency. The eye doesn't know where to go so it leaves.
-                    </p>
-                </div>
-                <span class="hidden md:block shrink-0 text-white/10 group-hover:text-white/40 transition-colors duration-200 mt-1">
-                    <i class="ph ph-arrow-right"></i>
-                </span>
-            </div>
-        </div>
-
-        <!-- Reason 08 -->
-        <div class="reason-row group border-t border-white/10 px-6 md:px-12 py-8 md:py-10 transition-all duration-500 ease-out hover:bg-white/[0.03] opacity-0 translate-y-4">
-            <div class="mx-auto max-w-7xl flex items-start gap-6 md:gap-12">
-                <span class="font-mono text-xs text-white/20 mt-1 shrink-0 w-7">08</span>
-                <div class="flex-1 md:flex md:items-baseline md:gap-12">
-                    <h3 class="font-heading text-[clamp(1.6rem,3.5vw,2.8rem)] leading-tight text-white md:w-1/2 shrink-0">
-                        Your nav menu is a labyrinth.
-                    </h3>
-                    <p class="mt-3 md:mt-0 text-sm md:text-base leading-7 text-white/40 font-light md:flex-1">
-                        Three levels deep, ambiguous labels, no clear path to purchase. Navigation should guide, not confuse. Yours confuses.
-                    </p>
-                </div>
-                <span class="hidden md:block shrink-0 text-white/10 group-hover:text-white/40 transition-colors duration-200 mt-1">
-                    <i class="ph ph-arrow-right"></i>
-                </span>
+              
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section px-6 md:px-12 py-24 md:py-32 border-b border-white/10 opacity-0 translate-y-8 transition-all duration-700 ease-out">
-        <div class="mx-auto max-w-7xl">
-            <div class="md:grid md:grid-cols-2 md:gap-24">
-                <div>
-                    <p class="font-mono text-xs tracking-[0.3em] uppercase text-white/30 mb-8">
-                        Let's fix it
-                    </p>
-                    <h2 class="font-heading text-[clamp(2.8rem,6vw,5.5rem)] leading-[0.95] text-white mb-8">
-                        Ready to get<br><em>unfucked?</em>
-                    </h2>
-                    <p class="text-sm leading-7 text-white/40 font-light max-w-xs">
-                        Tell us what's broken. We'll tear it apart, tell you exactly what's wrong, and fix it properly.
-                    </p>
+    <section id="contact" class="contact-section">
+        <div class="container">
+
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
                 </div>
 
-                <form id="contact-form" class="mt-12 md:mt-0 space-y-5" novalidate>
-                    <div>
-                        <label for="name" class="font-mono text-xs tracking-widest uppercase text-white/30 block mb-2">
-                            Name
-                        </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your name"
-                            class="w-full bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white transition-colors duration-200 font-light"
-                        />
-                    </div>
-                    <div>
-                        <label for="email" class="font-mono text-xs tracking-widest uppercase text-white/30 block mb-2">
-                            Email
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="you@company.com"
-                            class="w-full bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white transition-colors duration-200 font-light"
-                        />
-                    </div>
-                    <div>
-                        <label for="message" class="font-mono text-xs tracking-widest uppercase text-white/30 block mb-2">
-                            What's broken
-                        </label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Slow pages, bad UX, weak conversions, ugly hierarchy — be specific."
-                            rows="4"
-                            class="w-full bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white transition-colors duration-200 font-light min-h-28 resize-none"
-                        ></textarea>
-                    </div>
+                <div class="form-group">
+                    <label for="website">Your Website URL (if you have one)</label>
+                    <input type="url" id="website" name="website" placeholder="https://">
+                </div>
 
-                    <div id="form-feedback" class="hidden items-start gap-3 py-3 text-sm font-light" role="alert">
-                        <i class="ph mt-0.5 shrink-0"></i>
-                        <span id="feedback-text"></span>
-                    </div>
+                <div class="form-group">
+                    <label for="problem">What's fucked?</label>
+                    <textarea id="problem" name="problem" rows="5" placeholder="Be specific. The more you tell us, the faster we can fix it." required></textarea>
+                </div>
 
-                    <div class="pt-4">
-                        <button
-                            type="submit"
-                            class="bg-white text-black hover:bg-white/90 font-mono text-xs tracking-widest uppercase px-8 py-4 h-auto rounded-none transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            Send It
-                        </button>
-                    </div>
-                </form>
-            </div>
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Get a Free Audit</span>
+                    <span class="button-loader" style="display: none;">Sending...</span>
+                </button>
+
+                <div class="form-feedback" style="display: none;"></div>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="px-6 md:px-12 py-8">
-        <div class="mx-auto max-w-7xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <span class="font-mono text-xs tracking-widest uppercase text-white/20">
-                Unfuckyourweb © 2024
-            </span>
-            <span class="font-mono text-xs text-white/20">
-                No fluff. Just clean code.
-            </span>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Unfuck Your Web. </p>
+          
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="is-your-website-fucked.js"></script>
 </body>
 </html>

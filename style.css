@@ -74,7 +74,7 @@ body {
 
 .hero h1 {
     font-size: clamp(6rem, 10vw, 8rem);
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-medium);
     line-height: 1;
     margin-bottom: var(--spacing-md);
     letter-spacing: -0.02em;
@@ -100,7 +100,7 @@ body {
 
 .intro-text p {
     font-size: clamp(1.25rem, 3vw, 2rem);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-medium);
     text-align: left;
    ;
 }
@@ -139,6 +139,7 @@ body {
    CTA SECTION
    ============================================ */
 .cta-section {
+
     padding-top: var(--spacing-xl);
 }
 
@@ -192,29 +193,12 @@ body {
 }
 
 /* ============================================
-   CONTACT SECTION
+   CONTACT FORM
    ============================================ */
-.contact-section {
-    padding: var(--spacing-sm) 0;
-}
-
-.contact-section h2 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: var(--font-weight-normal);
-    text-align: left;
-    margin-bottom: var(--spacing-sm);
-}
-
-.section-intro {
-    text-align: left;
-    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    color: var(--color-text);
-    margin-bottom: var(--spacing-md);
-}
-
 .contact-form {
     max-width: 700px;
     margin: 0 auto;
+    margin-top: var(--spacing-lg);
 }
 
 .form-row {

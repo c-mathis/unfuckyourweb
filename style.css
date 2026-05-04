@@ -55,7 +55,7 @@ body {
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 var(--spacing-sm);
+    padding: 0 var(--spacing-xs);
 }
 
 /* ============================================
@@ -63,6 +63,7 @@ body {
    ============================================ */
 .hero {
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: top;
     justify-content: center;
@@ -108,7 +109,6 @@ body {
     list-style: none;
     max-width: 900px;
     margin: 0 auto;
-    counter-reset: fucked-counter;
 }
 
 .fucked-list li {
@@ -116,60 +116,24 @@ body {
     line-height: 1.6;
     padding: var(--spacing-md) 0;
     border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
     position: relative;
-    padding-left: 4.5rem;
 }
 
-.fucked-list li:before {
-    content: counter(fucked-counter, decimal-leading-zero);
-    position: absolute;
-    left: 0;
-    color: var(--color-text-muted);
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-medium);
-    line-height: 1.6;
-    top: var(--spacing-md);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.05em;
+.fucked-list li:hover {
+    padding-left: 0.5rem;
+}
+
+.fucked-list li.selected {
+    color: #8B0000;
+    padding-left: 1.5rem;
 }
 
 .fucked-list li:last-child {
     border-bottom: none;
 }
-
-/* Progressive counter increments - starts normal, gradually increases */
-.fucked-list li:nth-child(1) { counter-increment: fucked-counter 1; }
-.fucked-list li:nth-child(2) { counter-increment: fucked-counter 1; }
-.fucked-list li:nth-child(3) { counter-increment: fucked-counter 1; }
-.fucked-list li:nth-child(4) { counter-increment: fucked-counter 1; }
-.fucked-list li:nth-child(5) { counter-increment: fucked-counter 1; }
-.fucked-list li:nth-child(6) { counter-increment: fucked-counter 2; }
-.fucked-list li:nth-child(7) { counter-increment: fucked-counter 2; }
-.fucked-list li:nth-child(8) { counter-increment: fucked-counter 3; }
-.fucked-list li:nth-child(9) { counter-increment: fucked-counter 3; }
-.fucked-list li:nth-child(10) { counter-increment: fucked-counter 4; }
-.fucked-list li:nth-child(11) { counter-increment: fucked-counter 4; }
-.fucked-list li:nth-child(12) { counter-increment: fucked-counter 5; }
-.fucked-list li:nth-child(13) { counter-increment: fucked-counter 6; }
-.fucked-list li:nth-child(14) { counter-increment: fucked-counter 7; }
-.fucked-list li:nth-child(15) { counter-increment: fucked-counter 8; }
-.fucked-list li:nth-child(16) { counter-increment: fucked-counter 9; }
-.fucked-list li:nth-child(17) { counter-increment: fucked-counter 10; }
-.fucked-list li:nth-child(18) { counter-increment: fucked-counter 12; }
-.fucked-list li:nth-child(19) { counter-increment: fucked-counter 14; }
-.fucked-list li:nth-child(20) { counter-increment: fucked-counter 16; }
-.fucked-list li:nth-child(21) { counter-increment: fucked-counter 18; }
-.fucked-list li:nth-child(22) { counter-increment: fucked-counter 20; }
-.fucked-list li:nth-child(23) { counter-increment: fucked-counter 24; }
-.fucked-list li:nth-child(24) { counter-increment: fucked-counter 28; }
-.fucked-list li:nth-child(25) { counter-increment: fucked-counter 32; }
-.fucked-list li:nth-child(26) { counter-increment: fucked-counter 36; }
-.fucked-list li:nth-child(27) { counter-increment: fucked-counter 42; }
-.fucked-list li:nth-child(28) { counter-increment: fucked-counter 48; }
-.fucked-list li:nth-child(29) { counter-increment: fucked-counter 54; }
-.fucked-list li:nth-child(30) { counter-increment: fucked-counter 62; }
-.fucked-list li:nth-child(31) { counter-increment: fucked-counter 70; }
-.fucked-list li:nth-child(32) { counter-increment: fucked-counter 445; } /* Big jump to 989 for comedy */
 
 /* ============================================
    CTA SECTION
@@ -225,6 +189,7 @@ body {
     margin-top: var(--spacing-md);
     font-size: 1rem;
     color: var(--color-text-muted);
+    font-weight: 400;
 }
 
 /* ============================================
@@ -245,7 +210,7 @@ body {
 .section-intro {
     text-align: left;
     font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    color: var(--color-text-muted);
+    color: var(--color-text);
     margin-bottom: var(--spacing-md);
 }
 
@@ -268,16 +233,20 @@ body {
     display: block;
     font-weight: var(--font-weight-normal);
     margin-bottom: var(--spacing-xs);
-    font-size: 1rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    background-color: #000000;
-    border: 0.5px solid #fff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     color: var(--color-text);
-    padding: 1rem;
+    padding: 0.75rem 0;
     font-size: 1rem;
     font-family: var(--font-main);
 }
@@ -285,8 +254,8 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-accent);
-    background-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
 .form-group textarea {
@@ -366,11 +335,19 @@ body {
 
     .fucked-list li {
         font-size: 1rem;
-        padding-left: var(--spacing-md);
+    }
+
+    .fucked-list li.selected {
+        padding-left: 1rem;
     }
 
     .hero {
-        min-height: 60vh;
+        min-height: 40vh;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.5rem 0;
     }
 }
 

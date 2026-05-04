@@ -18,6 +18,31 @@ const CONFIG = {
 };
 
 // ============================================
+// LIST SELECTION TRACKING
+// ============================================
+
+const selectedIssues = new Set();
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Make list items selectable
+    const listItems = document.querySelectorAll('.fucked-list li');
+
+    listItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            const itemText = this.textContent.trim();
+
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                selectedIssues.delete(itemText);
+            } else {
+                this.classList.add('selected');
+                selectedIssues.add(itemText);
+            }
+        });
+    });
+});
+
+// ============================================
 // FORM HANDLING
 // ============================================
 
@@ -39,6 +64,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Get form data
         const formData = new FormData(form);
+
+        // Add selected issues to form data
+        if (selectedIssues.size > 0) {
+            formData.append('selected_issues', Array.from(selectedIssues).join(' | '));
+            formData.append('issues_count', selectedIssues.size);
+        } else {
+            formData.append('selected_issues', 'None selected');
+            formData.append('issues_count', 0);
+        }
 
         try {
             // Submit to configured endpoint

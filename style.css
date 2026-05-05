@@ -127,7 +127,7 @@ body {
 }
 
 .fucked-list li.selected {
-    color: #8B0000;
+    color: var(--color-text-muted);
     padding-left: 1.5rem;
 }
 

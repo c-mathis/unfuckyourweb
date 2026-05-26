@@ -3,12 +3,8 @@
 // ============================================
 
 const CONFIG = {
-    // EDIT THIS: Replace with your form submission endpoint
-    // Options:
-    // 1. FormSubmit: 'https://formsubmit.co/your@email.com'
-    // 2. Formspree: 'https://formspree.io/f/YOUR_FORM_ID'
-    // 3. Your custom backend: 'https://yourapi.com/submit'
-    formEndpoint: 'https://formsubmit.co/your@email.com', // CHANGE THIS
+    // Unfuck Leads API - centralized lead management
+    formEndpoint: 'https://leads.unfuckyourweb.com/submit',
 
     // Success message shown after form submission
     successMessage: "Got it. We'll get back to you within 24 hours.",
@@ -65,29 +61,50 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get form data
         const formData = new FormData(form);
 
-        // Add selected issues to form data
-        if (selectedIssues.size > 0) {
-            formData.append('selected_issues', Array.from(selectedIssues).join(' | '));
-            formData.append('issues_count', selectedIssues.size);
-        } else {
-            formData.append('selected_issues', 'None selected');
-            formData.append('issues_count', 0);
-        }
+        // Get tracking data from sessionStorage
+        const trackingData = JSON.parse(sessionStorage.getItem('tracking_data') || '{}');
+
+        // Build JSON payload for API
+        const payload = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            website: formData.get('website') || null,
+            problem: formData.get('problem'),
+            selected_issues: selectedIssues.size > 0 ? Array.from(selectedIssues).join(' | ') : 'None selected',
+            issues_count: selectedIssues.size,
+            utm_source: trackingData.utm_source || null,
+            utm_medium: trackingData.utm_medium || null,
+            utm_campaign: trackingData.utm_campaign || null,
+            utm_content: trackingData.utm_content || null,
+            referrer: trackingData.referrer || null,
+            landing_page: trackingData.landing_page || window.location.href
+        };
 
         try {
             // Submit to configured endpoint
             const response = await fetch(CONFIG.formEndpoint, {
                 method: 'POST',
-                body: formData,
+                body: JSON.stringify(payload),
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
             });
 
             if (response.ok) {
+                // Fire Meta Pixel Lead event
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead');
+                }
+
                 // Success
                 showFeedback('success', CONFIG.successMessage);
                 form.reset();
+
+                // Redirect to thank you page after 1.5 seconds
+                setTimeout(() => {
+                    window.location.href = '/thank-you.html';
+                }, 1500);
             } else {
                 // Server error
                 throw new Error('Server returned an error');

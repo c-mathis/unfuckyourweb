@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Redirect to thank you page after 1.5 seconds
                 setTimeout(() => {
-                    window.location.href = '/thank-you.html';
+                    window.location.href = '/thank-you';
                 }, 1500);
             } else {
                 // Server error

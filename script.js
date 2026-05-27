@@ -93,19 +93,38 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (response.ok) {
-                // Fire Meta Pixel Lead event
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', 'Lead');
-                }
-
                 // Success
                 showFeedback('success', CONFIG.successMessage);
                 form.reset();
 
-                // Redirect to thank you page after 1.5 seconds
-                setTimeout(() => {
-                    window.location.href = '/thank-you';
-                }, 1500);
+                // Generate unique event ID for deduplication
+                const eventID = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
+                // Store event ID for thank you page
+                sessionStorage.setItem('lead_event_id', eventID);
+
+                // Fire Meta Pixel Lead event with callback
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', {
+                        content_name: 'Website Audit Request',
+                        content_category: 'Lead Generation'
+                    }, {
+                        eventID: eventID
+                    });
+
+                    console.log('Meta Pixel Lead event fired with ID:', eventID);
+
+                    // Redirect after short delay to ensure pixel fires
+                    setTimeout(() => {
+                        window.location.href = '/thank-you';
+                    }, 300);
+                } else {
+                    console.warn('Meta Pixel not loaded');
+                    // No pixel, just redirect
+                    setTimeout(() => {
+                        window.location.href = '/thank-you';
+                    }, 1500);
+                }
             } else {
                 // Server error
                 throw new Error('Server returned an error');

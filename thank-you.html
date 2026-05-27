@@ -29,6 +29,22 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1494351685495599');
     fbq('track', 'PageView');
+
+    // Also fire Lead event on thank you page (with deduplication)
+    window.addEventListener('DOMContentLoaded', function() {
+        const eventID = sessionStorage.getItem('lead_event_id');
+        if (eventID) {
+            fbq('track', 'Lead', {
+                content_name: 'Website Audit Request',
+                content_category: 'Lead Generation'
+            }, {
+                eventID: eventID
+            });
+            console.log('Meta Pixel Lead event fired on thank-you page with ID:', eventID);
+            // Clear the event ID so it doesn't fire again
+            sessionStorage.removeItem('lead_event_id');
+        }
+    });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1494351685495599&ev=PageView&noscript=1"

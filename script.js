@@ -4,7 +4,8 @@
 
 const CONFIG = {
     // Unfuck Leads API - centralized lead management
-    formEndpoint: 'https://leads.unfuckyourweb.com/submit',
+    // Using workers.dev URL until DNS is configured for leads.unfuckyourweb.com
+    formEndpoint: 'https://unfuck-leads-worker.cameron-07f.workers.dev/submit',
 
     // Success message shown after form submission
     successMessage: "Got it. We'll get back to you within 24 hours.",

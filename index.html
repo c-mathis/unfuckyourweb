@@ -23,6 +23,7 @@
 
     <!-- Meta Pixel Code -->
     <script>
+    console.log('[Meta Pixel] Loading pixel code...');
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -31,8 +32,17 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+    console.log('[Meta Pixel] fbq function created, type:', typeof fbq);
     fbq('init', '1494351685495599');
+    console.log('[Meta Pixel] Pixel initialized with ID: 1494351685495599');
     fbq('track', 'PageView');
+    console.log('[Meta Pixel] PageView event tracked');
+
+    // Add event listener to verify pixel library loaded
+    window.addEventListener('load', function() {
+        console.log('[Meta Pixel] Window loaded, fbq type:', typeof fbq);
+        console.log('[Meta Pixel] _fbq exists:', typeof window._fbq);
+    });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1494351685495599&ev=PageView&noscript=1"

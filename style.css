@@ -55,25 +55,26 @@ body {
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 var(--spacing-xs);
+    padding: 0 var(--spacing-md);
 }
 
 /* ============================================
    HERO SECTION
    ============================================ */
 .hero {
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    align-items: top;
-    justify-content: center;
+    min-height: 30dvh;
     text-align: left;
     padding: var(--spacing-sm) 0;
-    padding-top: 2rem;
+}
+
+.hero .container {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 5%;
 }
 
 .hero h1 {
-    font-size: clamp(6rem, 10vw, 8rem);
+    font-size: 3rem;
     font-weight: var(--font-weight-medium);
     line-height: 1;
     margin-bottom: var(--spacing-md);
@@ -90,8 +91,7 @@ body {
    LIST SECTION
    ============================================ */
 .list-section {
-    padding: var(--spacing-md) 0;
-   
+    padding: var(--spacing-lg) 0;
 }
 
 .intro-text {
@@ -102,7 +102,6 @@ body {
     font-size: clamp(1.25rem, 3vw, 2rem);
     font-weight: var(--font-weight-medium);
     text-align: left;
-   ;
 }
 
 .fucked-list {
@@ -160,7 +159,6 @@ body {
 .cta-subtext {
     font-size: clamp(1.25rem, 3vw, 2rem);
     color: var(--color-text-muted);
-  
 }
 
 .cta-warning {
@@ -325,7 +323,7 @@ body {
     }
 
     .hero {
-        min-height: 40vh;
+        min-height: 30vh;
     }
 
     .form-group input,

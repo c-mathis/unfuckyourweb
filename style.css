@@ -94,26 +94,30 @@ body {
     padding: var(--spacing-lg) 0;
 }
 
+.list-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .intro-text {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
 
 .intro-text p {
-    font-size: clamp(1.25rem, 3vw, 2rem);
-    font-weight: var(--font-weight-medium);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-normal);
     text-align: left;
 }
 
 .fucked-list {
     list-style: none;
-    max-width: 900px;
     margin: 0 auto;
 }
 
 .fucked-list li {
-    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-size: 1.125rem;
     line-height: 1.6;
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-sm) 0;
     border-bottom: 1px solid var(--color-border);
     text-align: left;
     cursor: pointer;
@@ -138,19 +142,21 @@ body {
    CTA SECTION
    ============================================ */
 .cta-section {
-    min-height: 100dvh;
-    padding-top: var(--spacing-xl);
-    padding-bottom: var(--spacing-sm);
+    padding: var(--spacing-lg) 0;
+}
+
+.cta-section .container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .cta-content {
     text-align: left;
-    max-width: 800px;
     margin: 0 auto;
 }
 
 .cta-content h2 {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: 2rem;
     font-weight: var(--font-weight-medium);
     margin-bottom: var(--spacing-md);
     line-height: 1.2;
@@ -195,9 +201,9 @@ body {
    CONTACT FORM
    ============================================ */
 .contact-form {
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-md);
 }
 
 .form-row {
@@ -221,7 +227,8 @@ body {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
     background-color: transparent;
     border: none;
@@ -232,8 +239,23 @@ body {
     font-family: var(--font-main);
 }
 
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 2rem;
+}
+
+.form-group select option {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
     outline: none;
     border-bottom-color: #ffffff;
     background-color: rgba(255, 255, 255, 0.02);
@@ -302,6 +324,17 @@ body {
     margin-bottom: var(--spacing-xs);
 }
 
+.footer a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+
 .footer-tagline {
     font-size: 0.75rem;
 }
@@ -310,12 +343,17 @@ body {
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
     .form-row {
         grid-template-columns: 1fr;
     }
 
     .fucked-list li {
         font-size: 1rem;
+        padding: var(--spacing-sm) 0;
     }
 
     .fucked-list li.selected {
@@ -323,11 +361,22 @@ body {
     }
 
     .hero {
-        min-height: 30vh;
+        min-height: 40vh;
+        padding: var(--spacing-sm) 0;
+        align-items: flex-start;
+    }
+
+    .list-section {
+        padding: var(--spacing-md) 0;
+    }
+
+    .cta-section {
+        padding: var(--spacing-md) 0;
     }
 
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
         padding: 0.5rem 0;
     }
 }

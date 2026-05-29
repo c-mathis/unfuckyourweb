@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing | Unfuck Your Web</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Website fixes starting at $297. Quick fixes or ongoing support. No bullshit, just results.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    console.log('[Meta Pixel] Loading pixel code...');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    console.log('[Meta Pixel] fbq function created, type:', typeof fbq);
+    fbq('init', '1494351685495599');
+    console.log('[Meta Pixel] Pixel initialized with ID: 1494351685495599');
+    fbq('track', 'PageView');
+    console.log('[Meta Pixel] PageView event tracked');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1494351685495599&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        /* Pricing cards */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .pricing-card-header {
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-card .tagline {
+            font-size: 1.125rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-black);
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: var(--font-weight-normal);
+            color: var(--color-text-muted);
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pricing-card ul li {
+            padding: 0.5rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .pricing-card ul li:before {
+            content: "✓";
+            color: var(--color-accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5rem;
+        }
+
+        .pricing-card .examples {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pricing-card .examples h4 {
+            font-size: 0.875rem;
+            font-weight: var(--font-weight-bold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            color: var(--color-text-muted);
+        }
+
+        .pricing-card .examples ul {
+            margin-bottom: 0;
+        }
+
+        .pricing-card .examples ul li {
+            padding: 0.25rem 0;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+
+        .pricing-card .examples ul li:before {
+            content: "•";
+            color: var(--color-text-muted);
+        }
+
+        .pricing-card .cta-button {
+            width: 100%;
+            background-color: var(--color-accent);
+            color: var(--color-bg);
+            font-size: 1rem;
+            font-weight: var(--font-weight-bold);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pricing-card .cta-button:hover {
+            background-color: var(--color-accent-hover);
+        }
+
+        /* Not sure section */
+        .not-sure-section {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .not-sure-section h2 {
+            font-size: 2rem;
+            font-weight: var(--font-weight-medium);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .not-sure-section p {
+            font-size: 1.125rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .not-sure-section .cta-button {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color-text);
+            font-size: 1rem;
+            font-weight: var(--font-weight-bold);
+            padding: 1rem 2rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .not-sure-section .cta-button:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Modal overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--color-text);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: var(--color-accent);
+        }
+
+        .modal-content h2 {
+            font-size: 1.75rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-md);
+            padding-right: 2rem;
+        }
+
+        /* Checkbox list for Quick Fix form */
+        .checkbox-list {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .checkbox-list label {
+            display: block;
+            padding: 0.75rem 0;
+            font-size: 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--color-border);
+            transition: padding-left 0.3s ease;
+        }
+
+        .checkbox-list label:hover {
+            padding-left: 0.5rem;
+        }
+
+        .checkbox-list label:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox-list input[type="checkbox"] {
+            margin-right: 0.75rem;
+            cursor: pointer;
+        }
+
+        .checkbox-list input[type="text"] {
+            width: calc(100% - 1.5rem);
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--color-text);
+            padding: 0.5rem 0;
+            font-size: 1rem;
+            font-family: var(--font-main);
+        }
+
+        .checkbox-list input[type="text"]:focus {
+            outline: none;
+            border-bottom-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-overlay {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                padding: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your website is fucked.<br>Here's how we fix it.</h1>
+        </div>
+    </section>
+
+    <!-- Pricing Cards Section -->
+    <section class="list-section">
+        <div class="container">
+            <div class="pricing-cards">
+                <!-- Quick Fix Card -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Quick Fix</h3>
+                        <p class="tagline">One problem. Fixed.</p>
+                        <div class="price">$297</div>
+                    </div>
+
+                    <ul>
+                        <li>One specific issue</li>
+                        <li>Fixed in 48 hours</li>
+                        <li>Before/after proof</li>
+                        <li>No ongoing commitment</li>
+                    </ul>
+
+                    <div class="examples">
+                        <h4>Examples:</h4>
+                        <ul>
+                            <li>Speed up your site</li>
+                            <li>Fix broken forms</li>
+                            <li>Mobile responsiveness</li>
+                            <li>SSL/security issues</li>
+                            <li>SEO quick wins</li>
+                        </ul>
+                    </div>
+
+                    <button class="cta-button" onclick="openModal('quick-fix')">What Needs Fixing?</button>
+                </div>
+
+                <!-- Monthly Retainer Card -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Ongoing Support</h3>
+                        <p class="tagline">We handle everything.</p>
+                        <div class="price">$1,497<span>/mo</span></div>
+                    </div>
+
+                    <ul>
+                        <li>Unlimited fixes</li>
+                        <li>Performance monitoring</li>
+                        <li>Monthly reports</li>
+                        <li>Priority support</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+
+                    <div class="examples">
+                        <h4>What we fix:</h4>
+                        <ul>
+                            <li>All the shit that breaks</li>
+                            <li>Updates & maintenance</li>
+                            <li>Content changes</li>
+                            <li>Security patches</li>
+                            <li>Whatever you need</li>
+                        </ul>
+                    </div>
+
+                    <button class="cta-button" onclick="openModal('retainer')">Let's Talk</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Not Sure Section -->
+    <section class="not-sure-section">
+        <div class="container">
+            <h2>Not sure what you need?</h2>
+            <p>Tell us what's broken. We'll figure it out.</p>
+            <a href="/" class="cta-button">Describe Your Problem</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Unfuck Your Web. All rights reserved.</p>
+            <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+            <p class="footer-tagline">We fix websites. It's not rocket surgery.</p>
+        </div>
+    </footer>
+
+    <!-- Quick Fix Modal -->
+    <div id="quick-fix-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('quick-fix')">&times;</button>
+            <h2>What needs fixing?</h2>
+
+            <form id="quick-fix-form" class="contact-form">
+                <div class="checkbox-list">
+                    <label>
+                        <input type="checkbox" name="issue" value="Site is too slow">
+                        Site is too slow
+                    </label>
+                    <label>
+                        <input type="checkbox" name="issue" value="Mobile version is broken">
+                        Mobile version is broken
+                    </label>
+                    <label>
+                        <input type="checkbox" name="issue" value="Forms don't work">
+                        Forms don't work
+                    </label>
+                    <label>
+                        <input type="checkbox" name="issue" value="Can't find it on Google">
+                        Can't find it on Google
+                    </label>
+                    <label>
+                        <input type="checkbox" name="issue" value="Security warnings">
+                        Security warnings
+                    </label>
+                    <label>
+                        <input type="checkbox" id="other-checkbox" name="issue" value="other">
+                        Other
+                        <input type="text" id="other-text" name="other-issue" placeholder="Describe the issue..." style="display: none;">
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="quick-website">Your Website</label>
+                    <input type="text" id="quick-website" name="website" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quick-name">Name</label>
+                        <input type="text" id="quick-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quick-email">Email</label>
+                        <input type="email" id="quick-email" name="email" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Submit</span>
+                    <span class="button-loader" style="display: none;">Sending...</span>
+                </button>
+
+                <div class="form-feedback" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Retainer Modal -->
+    <div id="retainer-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('retainer')">&times;</button>
+            <h2>Let's talk about your retainer</h2>
+
+            <form id="retainer-form" class="contact-form">
+                <div class="form-group">
+                    <label for="retainer-website">Your Website</label>
+                    <input type="text" id="retainer-website" name="website" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="retainer-name">Name</label>
+                        <input type="text" id="retainer-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="retainer-email">Email</label>
+                        <input type="email" id="retainer-email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="retainer-needs">What do you need help with?</label>
+                    <textarea id="retainer-needs" name="needs" rows="4" placeholder="Tell us about your website and what you're looking for..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Submit</span>
+                    <span class="button-loader" style="display: none;">Sending...</span>
+                </button>
+
+                <div class="form-feedback" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="services.js"></script>
+
+</body>
+</html>

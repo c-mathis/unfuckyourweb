@@ -84,6 +84,12 @@ document.getElementById('retainer-form')?.addEventListener('submit', async (e) =
     await handleFormSubmit(e.target, 'retainer');
 });
 
+// Not Sure Form
+document.getElementById('not-sure-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await handleFormSubmit(e.target, 'not-sure');
+});
+
 async function handleFormSubmit(form, formType) {
     const submitButton = form.querySelector('.submit-button');
     const buttonText = form.querySelector('.button-text');
@@ -129,6 +135,9 @@ async function handleFormSubmit(form, formType) {
     } else if (formType === 'retainer') {
         payload.problem = `Retainer Request: ${formData.get('needs') || 'Not specified'}`;
         payload.service_type = 'retainer';
+    } else if (formType === 'not-sure') {
+        payload.problem = `Not Sure / General Inquiry: ${formData.get('problem') || 'Not specified'}`;
+        payload.service_type = 'not-sure';
     }
 
     // Add tracking data

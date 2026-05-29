@@ -402,7 +402,100 @@
         <div class="container">
             <h2>Not sure what you need?</h2>
             <p>Tell us what's broken. We'll figure it out.</p>
-            <a href="/" class="cta-button">Describe Your Problem</a>
+            <button class="cta-button" onclick="openModal('not-sure')">Describe Your Problem</button>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="list-section" style="border-top: 1px solid var(--color-border); padding-top: var(--spacing-lg);">
+        <div class="container">
+            <div class="intro-text" style="text-align: center; margin-bottom: var(--spacing-lg);">
+                <h2 style="font-size: 2rem; font-weight: var(--font-weight-medium); margin-bottom: 1rem;">We've unfucked 147 websites.</h2>
+                <p style="font-size: 1.25rem;">Here's what happened:</p>
+            </div>
+
+            <div class="pricing-cards">
+                <div class="pricing-card" style="background: none; border: none; padding: 0;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">E-commerce Site</h3>
+                    <ul style="margin-bottom: 0;">
+                        <li>Site speed: 8.2s → 1.4s</li>
+                        <li>Mobile score: 34 → 96</li>
+                        <li>Conversions: +47%</li>
+                        <li>Revenue: +$23k/month</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card" style="background: none; border: none; padding: 0;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">SaaS Company</h3>
+                    <ul style="margin-bottom: 0;">
+                        <li>Fixed broken signup flow</li>
+                        <li>Abandonment rate: 68% → 12%</li>
+                        <li>Trial signups: +156%</li>
+                        <li>Support tickets: -83%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-cards" style="margin-top: 2rem;">
+                <div class="pricing-card" style="background: none; border: none; padding: 0;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Local Service Business</h3>
+                    <ul style="margin-bottom: 0;">
+                        <li>Google ranking: Page 3 → Top 3</li>
+                        <li>Mobile traffic: +214%</li>
+                        <li>Form submissions: +89%</li>
+                        <li>Cost per lead: -64%</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card" style="background: none; border: none; padding: 0;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Professional Services</h3>
+                    <ul style="margin-bottom: 0;">
+                        <li>SSL errors fixed</li>
+                        <li>Security score: F → A+</li>
+                        <li>Uptime: 94% → 99.9%</li>
+                        <li>Zero hacking attempts since</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="cta-section" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <h2 style="font-size: 2rem; font-weight: var(--font-weight-medium); margin-bottom: var(--spacing-lg); text-align: center;">Questions?</h2>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div style="margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border);">
+                    <h3 style="font-size: 1.125rem; font-weight: var(--font-weight-bold); margin-bottom: 0.5rem;">What counts as "one problem" for the Quick Fix?</h3>
+                    <p style="color: var(--color-text-muted);">One issue = one fix. If your site is slow, that's one problem. If your forms are broken, that's another. We'll scope it before you pay.</p>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border);">
+                    <h3 style="font-size: 1.125rem; font-weight: var(--font-weight-bold); margin-bottom: 0.5rem;">What if you can't fix it in 48 hours?</h3>
+                    <p style="color: var(--color-text-muted);">We'll tell you upfront if it's going to take longer. If we underestimated, that's on us. You don't pay more.</p>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border);">
+                    <h3 style="font-size: 1.125rem; font-weight: var(--font-weight-bold); margin-bottom: 0.5rem;">What's "unlimited" mean for the retainer?</h3>
+                    <p style="color: var(--color-text-muted);">Within reason. You can submit as many issues as you want. We'll prioritize and knock them out. This isn't for building a whole new site—it's for fixing, maintaining, and improving what you have.</p>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border);">
+                    <h3 style="font-size: 1.125rem; font-weight: var(--font-weight-bold); margin-bottom: 0.5rem;">Can I cancel the retainer anytime?</h3>
+                    <p style="color: var(--color-text-muted);">Yes. No contracts, no cancellation fees. If we're not earning your $1,497/month, you shouldn't be paying it.</p>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border);">
+                    <h3 style="font-size: 1.125rem; font-weight: var(--font-weight-bold); margin-bottom: 0.5rem;">What if I don't use the retainer every month?</h3>
+                    <p style="color: var(--color-text-muted);">That's fine. You're paying for peace of mind. When shit breaks (and it will), we're on it. Plus, we're proactively monitoring your site so stuff doesn't break in the first place.</p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.125rem; font-weight: var(--font-weight-bold); margin-bottom: 0.5rem;">Do you work with WordPress/Shopify/Wix/etc?</h3>
+                    <p style="color: var(--color-text-muted);">We work with everything. WordPress, Shopify, custom code, whatever you've got. If it's a website, we can fix it.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -502,6 +595,44 @@
                 <div class="form-group">
                     <label for="retainer-needs">What do you need help with?</label>
                     <textarea id="retainer-needs" name="needs" rows="4" placeholder="Tell us about your website and what you're looking for..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Submit</span>
+                    <span class="button-loader" style="display: none;">Sending...</span>
+                </button>
+
+                <div class="form-feedback" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Not Sure Modal -->
+    <div id="not-sure-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('not-sure')">&times;</button>
+            <h2>What's going on with your site?</h2>
+
+            <form id="not-sure-form" class="contact-form">
+                <div class="form-group">
+                    <label for="not-sure-website">Your Website</label>
+                    <input type="text" id="not-sure-website" name="website" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="not-sure-name">Name</label>
+                        <input type="text" id="not-sure-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="not-sure-email">Email</label>
+                        <input type="email" id="not-sure-email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="not-sure-problem">What's broken?</label>
+                    <textarea id="not-sure-problem" name="problem" rows="4" placeholder="Tell us what's not working or what you need help with..." required></textarea>
                 </div>
 
                 <button type="submit" class="submit-button">
